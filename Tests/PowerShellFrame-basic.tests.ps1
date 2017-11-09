@@ -3,7 +3,7 @@ if($env:APPVEYOR_REPO_BRANCH -and $env:APPVEYOR_REPO_BRANCH -notlike "master") {
     $Verbose.add("Verbose",$True)
 }
 
-$moduleRoot = Resolve-Path "$PSScriptRoot\.."
+$moduleRoot = Resolve-Path "$PSScriptRoot\..\PowerShellFrame"
 $moduleName = "PowerShellFrame"
 
 Describe "General project validation: $moduleName" {

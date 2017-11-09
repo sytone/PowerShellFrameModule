@@ -1,18 +1,19 @@
 
 function Backup-Customizations() {
+    [CmdletBinding()]
     # This will backup all the customizations for the PSF world to make it easy to restore.
     # Depends on OneDrive and OneDrive Syncronization.
     $x = (get-item OneDrive:\PSFSync)
     $syncRoot = "$($x.FullName)"
     pushd $env:USERPROFILE
 
-    if(-not (Test-Path OneDrive:\)) {
-      Write-Host "Unable to backup in OneDrive. Not mapped or setup." -ForegroundColor Red
-      return
+    if (-not (Test-Path OneDrive:\)) {
+        Write-Host "Unable to backup in OneDrive. Not mapped or setup." -ForegroundColor Red
+        return
     }
 
-    if(-not (Test-Path $syncRoot)) {
-      New-Item -Path $syncRoot -ItemType Directory | Out-Null
+    if (-not (Test-Path $syncRoot)) {
+        New-Item -Path $syncRoot -ItemType Directory | Out-Null
     }
 
     # Backup CMDER XML.
@@ -35,4 +36,4 @@ function Backup-Customizations() {
     Remove-Item -Path (Join-Path $syncRoot "CoreModulesAuto\AutoHotkey") -Recurse -Force | Out-Null
     Remove-Item -Path (Join-Path $syncRoot "CoreModulesAuto\PowerShellFrame") -Recurse -Force | Out-Null
     popd
-  }
+}

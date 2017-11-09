@@ -1,61 +1,13 @@
-<#
-.SYNOPSIS
-  Starts the remote desktop process with options set.
-
-.DESCRIPTION
-  Allows you to start a remote desktop process and set options not made avliable
-  by mstsc like the gateway host name.
-
-.PARAMETER FullAddress
-  A valid computer name, IPv4 address, or IPv6 address - Specifies the remote computer to which you want to connect
-
-.PARAMETER FullScreen
-  If specified remote desktop will be full screen.
-
-.PARAMETER Resolution
-  Screen resolution if not full screen. 1024x768 by default.
-
-.PARAMETER UseMultimon
-  Use all monitors.
-
-.PARAMETER GatewayHostName
-  Use a gateway for the connection.
-
-.PARAMETER UserName
-  Username to use to log into the remote computer.
-
-.INPUTS
-  None
-
-.OUTPUTS
-  None
-
-.NOTES
-  Version:        1.0
-  Author:         Sytone
-  Creation Date:  1/18/2016
-  Purpose/Change: Initial script development
-
-.EXAMPLE
-  Connect-RemoteDesktop -FullAddress mrserver -FullScreen -UseMultimon
-
-  Connect-RemoteDesktop -FullAddress mrserver -FullScreen -UseMultimon -GatewayHostName my.gateway.com
-#>
 function Connect-RemoteDesktop {
     [CmdletBinding()]
 
     Param (
-        [Parameter(Mandatory=$True,HelpMessage="A valid computer name, IPv4 address, or IPv6 address - Specifies the remote computer to which you want to connect")]
+        [Parameter(Mandatory = $True)]
         [string]$FullAddress,
-        [Parameter(HelpMessage="If specified remote desktop will be full screen.")]
         [switch]$FullScreen,
-        [Parameter(HelpMessage="Screen resolution if not full screen. 1024x768 by default.")]
         [string]$Resolution = "1024x768",
-        [Parameter(HelpMessage="Use all monitors.")]
         [Switch]$UseMultimon,
-        [Parameter(HelpMessage="Use a gateway for the connection.")]
         [String]$GatewayHostName,
-        [Parameter(HelpMessage="Username to use to log into the remote computer.")]
         [String]$UserName
     )
 
@@ -63,25 +15,27 @@ function Connect-RemoteDesktop {
     }
 
     process {
-        if($FullScreen) {
+        if ($FullScreen) {
             $screenmodeid = "2"
-        } else {
+        }
+        else {
             $screenmodeid = "1"
         }
 
-        if($Resolution -match 'x') {
+        if ($Resolution -match 'x') {
             $width = $Resolution.Split('x')[0]
             $height = $Resolution.Split('x')[1]
         }
 
-        if($UseMultimon) {
+        if ($UseMultimon) {
             $multiMon = "use multimon:i:1"
             $screenmodeid = "2"
-        } else {
+        }
+        else {
             $multiMon = "use multimon:i:0"
         }
 
-$rdpString = @"
+        $rdpString = @"
 screen mode id:i:$screenmodeid
 $multiMon
 desktopwidth:i:$width
@@ -130,7 +84,7 @@ rdgiskdcproxy:i:0
 kdcproxyname:s:
 drivestoredirect:s:
 "@
-        if($UserName) {
+        if ($UserName) {
             $rdpString += "username:s:$UserName`n"
         }
         $f = New-TemporaryFile
@@ -138,4 +92,4 @@ drivestoredirect:s:
         $rdpString | Set-Content $rdpFile
         Start-Process $rdpFile
     }
- }
+}

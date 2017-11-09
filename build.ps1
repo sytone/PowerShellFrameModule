@@ -42,12 +42,12 @@ else
     }
 
     # Create new markdown and XML help files
-    #Write-Host "Building new function documentation" -ForegroundColor Yellow
-    #Import-Module -Name "$PSScriptRoot\PowerShellFrame" -Force
-    #New-MarkdownHelp -Module PowerShellFrame -OutputFolder '.\docs\commands\' -Force
-    #New-ExternalHelp -Path '.\docs\commands\' -OutputPath '.\PowerShellFrame\en-US\' -Force
+    Write-Host "Building new function documentation" -ForegroundColor Yellow
+    Import-Module -Name "$PSScriptRoot\PowerShellFrame" -Force
+    Update-MarkdownHelp "$PSScriptRoot\docs"
+    New-ExternalHelp -Path "$PSScriptRoot\docs" -OutputPath "$PSScriptRoot\PowerShellFrame\en-US\" -Force
     #. .\tests\docs.ps1
-    #Write-Host -Object ''
+    Write-Host -Object ''
 
     # Publish the new version to the PowerShell Gallery
     Try

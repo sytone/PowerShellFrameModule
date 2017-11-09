@@ -12,7 +12,7 @@
 RootModule = 'PowerShellFrame.psm1'
 
 # Version number of this module.
-ModuleVersion = '0.0.0.13'
+ModuleVersion = '0.0.0.14'
 
 # ID used to uniquely identify this module
 GUID = 'e5088a56-a52b-4bfc-afcd-fd1996a18656'
@@ -68,13 +68,13 @@ FormatsToProcess = @()
 # Functions to export from this module
 FunctionsToExport = @('Add-DirectoryToPath', 'alias', 'Backup-Customizations', 
                'Connect-RemoteDesktop', 'Get-PsfConfig', 'Get-PsfGit', 
-               'Initialize-PsfGit', 'Read-Choice', 'Read-FolderBrowserDialog', 
-               'Read-InputBoxDialog', 'Read-MessageBoxDialog', 
-               'Read-MultiLineInputBoxDialog', 'Read-OpenFileDialog', 
-               'Remove-PsfConfig', 'Restart-Host', 'Restore-Customizations', 
-               'Set-LocationWithPathCheck', 'Set-PsfConfig', 
-               'Show-NavigationableMenu', 'Start-ElevatedProcess', 'Test-PsfChanges', 
-               'unalias', 'Update-PsfGit')
+               'Get-SystemUptime', 'Initialize-PsfGit', 'Read-Choice', 
+               'Read-FolderBrowserDialog', 'Read-InputBoxDialog', 
+               'Read-MessageBoxDialog', 'Read-MultiLineInputBoxDialog', 
+               'Read-OpenFileDialog', 'Remove-PsfConfig', 'Restart-Host', 
+               'Restore-Customizations', 'Set-LocationWithPathCheck', 
+               'Set-PsfConfig', 'Show-NavigationableMenu', 'Start-ElevatedProcess', 
+               'Test-PsfChanges', 'unalias', 'Update-PsfGit')
 
 # Cmdlets to export from this module
 CmdletsToExport = @()

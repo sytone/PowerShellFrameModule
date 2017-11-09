@@ -1,7 +1,7 @@
 ---
 external help file: PowerShellFrame-help.xml
 Module Name: PowerShellFrame
-online version:
+online version: 
 schema: 2.0.0
 ---
 
@@ -13,7 +13,7 @@ Updates the path environment variable with a new directory and can be used in th
 ## SYNTAX
 
 ```
-Add-DirectoryToPath [[-Directory] <Object>] [<CommonParameters>]
+Add-DirectoryToPath [-Directory] <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -34,11 +34,11 @@ $env:PATH will now have 'c:\mypath' added to it.
 The Directory you want added to the path environment variable.
 
 ```yaml
-Type: Object
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
-Required: False
+Required: True
 Position: 0
 Default value: None
 Accept pipeline input: False

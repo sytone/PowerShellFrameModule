@@ -1,7 +1,7 @@
 ---
 external help file: PowerShellFrame-help.xml
 Module Name: PowerShellFrame
-online version:
+online version: 
 schema: 2.0.0
 ---
 
@@ -13,7 +13,7 @@ Pulls a configuration value from the local configuration file.
 ## SYNTAX
 
 ```
-Get-PsfConfig [[-Key] <Object>] [<CommonParameters>]
+Get-PsfConfig [-Key] <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -34,11 +34,11 @@ Get the value for the DevelopmentFolder key.
 {{Fill Key Description}}
 
 ```yaml
-Type: Object
+Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
-Required: False
+Required: True
 Position: 0
 Default value: None
 Accept pipeline input: False

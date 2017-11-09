@@ -1,0 +1,12 @@
+PSTOPIC
+    about_PowerShellFrame
+
+SHORT DESCRIPTION
+    This is the PowerShell Framework moduel, used to help make the environment you work in easier. 
+
+LONG DESCRIPTION
+    This is the PowerShell Framework moduel, used to help make the environment you work in easier. 
+
+DETAILED DESCRIPTION
+    This is the PowerShell Framework moduel, used to help make the environment you work in easier. 
+

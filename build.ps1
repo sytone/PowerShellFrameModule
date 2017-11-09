@@ -18,7 +18,7 @@ else
     Try
     {
         # This is where the module manifest lives
-        $manifestPath = '.\PowerShellFrame.psd1'
+        $manifestPath = '.\PowerShellFrame\PowerShellFrame.psd1'
 
         # Start by importing the manifest to determine the version, then add 1 to the revision
         $manifest = Test-ModuleManifest -Path $manifestPath
@@ -48,7 +48,7 @@ else
     {
         # Build a splat containing the required details and make sure to Stop for errors which will trigger the catch
         $PM = @{
-            Path        = '.\'
+            Path        = '.\PowerShellFrame'
             NuGetApiKey = $env:NuGetApiKey
             ErrorAction = 'Stop'
         }

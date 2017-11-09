@@ -10,7 +10,7 @@
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>{{Fill in the Description}}</maml:para>
+      <maml:para>Updates the path environment variable with a new directory and can be used in this session.</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>

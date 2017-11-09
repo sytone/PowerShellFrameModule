@@ -12,7 +12,7 @@
 RootModule = 'PowerShellFrame.psm1'
 
 # Version number of this module.
-ModuleVersion = '0.0.0.14'
+ModuleVersion = '0.0.0.15'
 
 # ID used to uniquely identify this module
 GUID = 'e5088a56-a52b-4bfc-afcd-fd1996a18656'

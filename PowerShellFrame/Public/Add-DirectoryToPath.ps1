@@ -12,5 +12,6 @@ function Add-DirectoryToPath {
         $env_Path += "$Directory"
         [System.Environment]::SetEnvironmentVariable("Path", $env_Path, "User")
         $env:Path = $env_Path
+        Write-Verbose "Updated local path: $env:Path"
     }
 }

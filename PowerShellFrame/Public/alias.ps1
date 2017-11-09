@@ -11,6 +11,8 @@ function alias {
 Invoke-Expression '$cmd `@args '
     ###ALIAS###
 "@
+    Write-Verbose $f
     # Invoke-Expression '$cmd `$args'
     $a = Set-Alias -Name $Alias -Value "Alias$Alias" -Description "A UNIX-style alias using functions" -Option "AllScope" -scope Global -passThru
+    Write-Verbose $a
 }

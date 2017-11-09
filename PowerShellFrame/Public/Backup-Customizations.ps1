@@ -5,7 +5,7 @@ function Backup-Customizations() {
     # Depends on OneDrive and OneDrive Syncronization.
     $x = (get-item OneDrive:\PSFSync)
     $syncRoot = "$($x.FullName)"
-    pushd $env:USERPROFILE
+    Push-Location $env:USERPROFILE
 
     if (-not (Test-Path OneDrive:\)) {
         Write-Host "Unable to backup in OneDrive. Not mapped or setup." -ForegroundColor Red
@@ -35,5 +35,5 @@ function Backup-Customizations() {
     #Copy-Item -Path Scripts:\CoreModulesAuto\*.* -Destination (Join-Path $syncRoot "CoreModulesAuto") -Recurse -Force
     Remove-Item -Path (Join-Path $syncRoot "CoreModulesAuto\AutoHotkey") -Recurse -Force | Out-Null
     Remove-Item -Path (Join-Path $syncRoot "CoreModulesAuto\PowerShellFrame") -Recurse -Force | Out-Null
-    popd
+    Pop-Location
 }

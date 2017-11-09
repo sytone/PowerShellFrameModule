@@ -66,7 +66,31 @@ FormatsToProcess = @()
 # NestedModules = @()
 
 # Functions to export from this module
-FunctionsToExport = @()
+FunctionsToExport = @(
+    'Add-DirectoryToPath',
+    'alias',
+    'Backup-Customizations',
+    'Connect-RemoteDesktop',
+    'Get-PsfConfig',
+    'Get-PsfGit',
+    'Initialize-PsfGit',
+    'Read-Choice',
+    'Read-FolderBrowserDialog',
+    'Read-InputBoxDialog',
+    'Read-MessageBoxDialog',
+    'Read-MultiLineInputBoxDialog',
+    'Read-OpenFileDialog',
+    'Remove-PsfConfig',
+    'Restart-Host',
+    'Restore-Customizations',
+    'Set-LocationWithPathCheck',
+    'Set-PsfConfig',
+    'Show-NavigationableMenu',
+    'Start-ElevatedProcess',
+    'Test-PsfChanges',
+    'unalias',
+    'Update-PsfGit'
+)
 
 # Cmdlets to export from this module
 CmdletsToExport = @()

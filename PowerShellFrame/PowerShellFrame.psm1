@@ -20,5 +20,5 @@ Foreach($import in @($Public + $Private + $Classes))
 # - Read in or create an initial config file and variable
 # - Set variables visible to the module and its functions only
 
-# This only exports the public functions and nothing else. 
+# This only exports the public functions and nothing else.
 Export-ModuleMember -Function $Public.Basename

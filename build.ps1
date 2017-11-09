@@ -27,8 +27,14 @@ else
         [String]$newVersion = New-Object -TypeName System.Version -ArgumentList ($version.Major, $version.Minor, $version.Build, $env:APPVEYOR_BUILD_NUMBER)
         Write-Output "New Version: $newVersion"
 
-        # Update the manifest with the new version value.
-        Update-ModuleManifest -Path $manifestPath -ModuleVersion $newVersion
+        # Update the manifest with the new version value and fix the weird string replace bug
+        $functionList = ((Get-ChildItem -Path .\PowerShellFrame\Public).BaseName)
+        Update-ModuleManifest -Path $manifestPath -ModuleVersion $newVersion -FunctionsToExport $functionList
+        (Get-Content -Path $manifestPath) -replace 'PSGet_PowerShellFrame', 'PowerShellFrame' | Set-Content -Path $manifestPath
+        (Get-Content -Path $manifestPath) -replace 'NewManifest', 'PowerShellFrame' | Set-Content -Path $manifestPath
+        (Get-Content -Path $manifestPath) -replace 'FunctionsToExport = ', 'FunctionsToExport = @(' | Set-Content -Path $manifestPath -Force
+        (Get-Content -Path $manifestPath) -replace "$($functionList[-1])'", "$($functionList[-1])')" | Set-Content -Path $manifestPath -Force
+
     }
     catch
     {

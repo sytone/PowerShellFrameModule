@@ -19,6 +19,6 @@ If you want to do it manually, download this repo and put the PowerShellFrame fo
 
 ``` PowerShell
 cd "$env:USERPROFILE\Documents\WindowsPowerShell\Modules"
-git clone https://github.com/sytone/PowerShellFrame.git
+git clone https://github.com/sytone/PowerShellFrameModule.git
 ```
 

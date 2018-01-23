@@ -8,7 +8,7 @@ schema: 2.0.0
 # Initialize-PsfGit
 
 ## SYNOPSIS
-{{Fill in the Synopsis}}
+This provides a fast way to get the enlistments for the PowerShell framework to make and submit modifications. 
 
 ## SYNTAX
 
@@ -17,16 +17,16 @@ Initialize-PsfGit [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-{{Fill in the Description}}
+This provides a fast way to get the enlistments for the PowerShell framework to make and submit modifications. 
 
 ## EXAMPLES
 
 ### Example 1
 ```
-PS C:\> {{ Add example code here }}
+PS C:\> Initialize-PsfGit
 ```
 
-{{ Add example description here }}
+Will make a PowerShellFrame and PowerShellFramModule directories in the dev folder in your provile and will then clone the enlistments. 
 
 ## PARAMETERS
 

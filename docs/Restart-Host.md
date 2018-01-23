@@ -1,7 +1,7 @@
 ---
 external help file: PowerShellFrame-help.xml
 Module Name: PowerShellFrame
-online version: 
+online version:
 schema: 2.0.0
 ---
 
@@ -36,7 +36,7 @@ PS C:\> {{ Add example code here }}
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -66,7 +66,7 @@ Accept wildcard characters: False
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -105,4 +105,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
-

@@ -1,7 +1,7 @@
 ---
 external help file: PowerShellFrame-help.xml
 Module Name: PowerShellFrame
-online version: 
+online version:
 schema: 2.0.0
 ---
 
@@ -23,7 +23,7 @@ to the calling function for tracking.
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### EXAMPLE 1
 ```
 Start a new powershell instance that is elevated.
 ```
@@ -44,4 +44,3 @@ You need to have admin access to actually run the process as elevated.
 You may get a UAC prompt.
 
 ## RELATED LINKS
-

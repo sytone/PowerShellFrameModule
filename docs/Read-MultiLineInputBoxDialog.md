@@ -1,7 +1,7 @@
 ---
 external help file: PowerShellFrame-help.xml
 Module Name: PowerShellFrame
-online version: 
+online version:
 schema: 2.0.0
 ---
 
@@ -22,14 +22,14 @@ Prompts the user with a multi-line input box and returns the text they enter, or
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### EXAMPLE 1
 ```
 $userText = Read-MultiLineInputDialog "Input some text please:" "Get User's Input"
 ```
 
 Shows how to create a simple prompt to get mutli-line input from a user.
 
-### -------------------------- EXAMPLE 2 --------------------------
+### EXAMPLE 2
 ```
 # Setup the default multi-line address to fill the input box with.
 ```
@@ -50,7 +50,7 @@ if ($address -eq $null)
 Prompts the user for their address and stores it in a variable, pre-filling the input box with a default multi-line address.
 If the user pressed the Cancel button an error is written to the console.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### EXAMPLE 3
 ```
 $inputText = Read-MultiLineInputDialog -Message "If you have a really long message you can break it apart`nover two lines with the powershell newline character:" -WindowTitle "Window Title" -DefaultText "Default text for the input box."
 ```
@@ -58,7 +58,7 @@ $inputText = Read-MultiLineInputDialog -Message "If you have a really long messa
 Shows how to break the second parameter (Message) up onto two lines using the powershell newline character (\`n).
 If you break the message up into more than two lines the extra lines will be hidden behind or show ontop of the TextBox.
 
-### -------------------------- EXAMPLE 4 --------------------------
+### EXAMPLE 4
 ```
 $multiLineText = Read-MultiLineInputBoxDialog -Message "Please enter some text. It can be multiple lines" -WindowTitle "Multi Line Example" -DefaultText "Enter some text here..."
 ```
@@ -73,7 +73,7 @@ The message to display to the user explaining what text we are asking them to en
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -88,7 +88,7 @@ The text to display on the prompt window's title.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -103,7 +103,7 @@ The default text to show in the input box.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 3
@@ -125,4 +125,3 @@ Author: Daniel Schroeder (originally based on the code shown at http://technet.m
 Version: 1.0
 
 ## RELATED LINKS
-

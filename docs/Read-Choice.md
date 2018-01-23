@@ -1,7 +1,7 @@
 ---
 external help file: PowerShellFrame-help.xml
 Module Name: PowerShellFrame
-online version: 
+online version:
 schema: 2.0.0
 ---
 
@@ -29,12 +29,12 @@ Read-Choice [-Choices] <String[]> [-Caption <String>] [[-Message] <String>] [-De
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### EXAMPLE 1
 ```
 Read-Choice "WEBPAGE BUILDER MENU"  "&Create Webpage","&View HTML code","&Publish Webpage","&Remove Webpage","E&xit"
 ```
 
-### -------------------------- EXAMPLE 2 --------------------------
+### EXAMPLE 2
 ```
 [bool](Read-Choice "Do you really want to do this?" "&No","&Yes" -Default 1)
 ```
@@ -42,7 +42,7 @@ Read-Choice "WEBPAGE BUILDER MENU"  "&Create Webpage","&View HTML code","&Publis
 This example takes advantage of the 0-based index to convert No (0) to False, and Yes (1) to True.
 It also specifies YES as the default, since that's the norm in PowerShell.
 
-### -------------------------- EXAMPLE 3 --------------------------
+### EXAMPLE 3
 ```
 Read-Choice "Do you really want to delete them all?" @{"&No"="Do not delete all files. You will be prompted to delete each file individually."; "&Yes"="Confirm that you want to delete all of the files"}
 ```
@@ -58,7 +58,7 @@ A Hashtable where the keys represent the choices (or menu items), with optional 
 ```yaml
 Type: Hashtable
 Parameter Sets: HashtableWithHelp
-Aliases: 
+Aliases:
 
 Required: True
 Position: 11
@@ -73,7 +73,7 @@ An array of strings representing the choices (or menu items), with optional ampe
 ```yaml
 Type: String[]
 Parameter Sets: StringArray
-Aliases: 
+Aliases:
 
 Required: True
 Position: 11
@@ -88,7 +88,7 @@ An additional caption that can be displayed (usually above the Message) as part 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -104,7 +104,7 @@ Basically, the question you're asking.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -119,7 +119,7 @@ The (0-based) index of the menu item to select by default (defaults to zero).
 ```yaml
 Type: Int32[]
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -136,7 +136,7 @@ Note: when you specify MultipleChoice you may also specify multiple options as t
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -151,7 +151,7 @@ Causes the Choices objects to be output instead of just the indexes
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -170,4 +170,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
-

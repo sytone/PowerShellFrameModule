@@ -1,7 +1,7 @@
 ---
 external help file: PowerShellFrame-help.xml
 Module Name: PowerShellFrame
-online version: 
+online version:
 schema: 2.0.0
 ---
 
@@ -23,7 +23,7 @@ by mstsc like the gateway host name.
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
+### EXAMPLE 1
 ```
 Connect-RemoteDesktop -FullAddress mrserver -FullScreen -UseMultimon
 ```
@@ -38,7 +38,7 @@ A valid computer name, IPv4 address, or IPv6 address - Specifies the remote comp
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 1
@@ -53,7 +53,7 @@ If specified remote desktop will be full screen.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -69,7 +69,7 @@ Screen resolution if not full screen.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -84,7 +84,7 @@ Use all monitors.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -99,7 +99,7 @@ Use a gateway for the connection.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 3
@@ -114,7 +114,7 @@ Username to use to log into the remote computer.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 4
@@ -141,4 +141,3 @@ Creation Date:  1/18/2016
 Purpose/Change: Initial script development
 
 ## RELATED LINKS
-

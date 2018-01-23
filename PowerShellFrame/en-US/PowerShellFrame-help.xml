@@ -494,11 +494,11 @@
       <command:verb>Initialize</command:verb>
       <command:noun>PsfGit</command:noun>
       <maml:description>
-        <maml:para>{{Fill in the Synopsis}}</maml:para>
+        <maml:para>This provides a fast way to get the enlistments for the PowerShell framework to make and submit modifications.</maml:para>
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>{{Fill in the Description}}</maml:para>
+      <maml:para>This provides a fast way to get the enlistments for the PowerShell framework to make and submit modifications.</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
@@ -534,9 +534,9 @@
     <command:examples>
       <command:example>
         <maml:title>-------------------------- Example 1 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; {{ Add example code here }}</dev:code>
+        <dev:code>PS C:\&gt; Initialize-PsfGit</dev:code>
         <dev:remarks>
-          <maml:para>{{ Add example description here }}</maml:para>
+          <maml:para>Will make a PowerShellFrame and PowerShellFramModule directories in the dev folder in your provile and will then clone the enlistments.</maml:para>
         </dev:remarks>
       </command:example>
     </command:examples>

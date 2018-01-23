@@ -12,7 +12,7 @@
 RootModule = 'PowerShellFrame.psm1'
 
 # Version number of this module.
-ModuleVersion = '0.0.0.19'
+ModuleVersion = '0.0.0.20'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
@@ -70,8 +70,8 @@ Description = 'This is the PowerShell Framework moduel, used to help make the en
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
 FunctionsToExport = @('Add-DirectoryToPath', 'alias', 'Backup-Customizations', 
-               'Connect-RemoteDesktop', 'Get-PsfConfig', 'Get-PsfGit', 
-               'Get-SystemUptime', 'Initialize-PsfGit', 'Read-Choice', 
+               'Connect-RemoteDesktop', 'Get-Gist', 'Get-PsfConfig', 'Get-PsfGit', 
+               'Get-SystemUptime', 'Initialize-PsfGit', 'New-Gist', 'Read-Choice', 
                'Read-FolderBrowserDialog', 'Read-InputBoxDialog', 
                'Read-MessageBoxDialog', 'Read-MultiLineInputBoxDialog', 
                'Read-OpenFileDialog', 'Remove-PsfConfig', 'Restart-Host', 

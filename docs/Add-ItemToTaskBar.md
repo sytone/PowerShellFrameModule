@@ -8,10 +8,11 @@ schema: 2.0.0
 # Add-ItemToTaskBar
 
 ## SYNOPSIS
+Creates an item in the task bar linking to the provided path.
 
 ## SYNTAX
 
-```
+```PowerShell
 Add-ItemToTaskBar [-TargetFilePath] <String> [<CommonParameters>]
 ```
 
@@ -19,11 +20,16 @@ Add-ItemToTaskBar [-TargetFilePath] <String> [<CommonParameters>]
 
 ## EXAMPLES
 
+```PowerShell
+Add-ItemToTaskBar -TargetFilePath "${env:ProgramFiles(x86)}\Google\Chrome\Application\chrome.exe"
+```
+
 ## PARAMETERS
 
 ### -TargetFilePath
-The path to the application that should be launched when clicking on the
-task bar icon.```yaml
+The path to the application that should be launched when clicking on the task bar icon.
+
+```yaml
 Type: String
 Parameter Sets: (All)
 Aliases:

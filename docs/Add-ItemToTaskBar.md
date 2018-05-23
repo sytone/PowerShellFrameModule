@@ -12,7 +12,7 @@ schema: 2.0.0
 ## SYNTAX
 
 ```
-Add-ItemToTaskBar [-targetFilePath] <String> [-ignoredArguments <Object[]>] [<CommonParameters>]
+Add-ItemToTaskBar [-TargetFilePath] <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -21,7 +21,7 @@ Add-ItemToTaskBar [-targetFilePath] <String> [-ignoredArguments <Object[]>] [<Co
 
 ## PARAMETERS
 
-### -targetFilePath
+### -TargetFilePath
 The path to the application that should be launched when clicking on the
 task bar icon.```yaml
 Type: String
@@ -30,19 +30,6 @@ Aliases:
 
 Required: True
 Position: 1
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ignoredArguments
-Allows splatting with arguments that do not apply. Do not use directly.```yaml
-Type: Object[]
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

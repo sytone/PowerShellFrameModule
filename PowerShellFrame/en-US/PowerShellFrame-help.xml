@@ -95,7 +95,7 @@
       <command:syntaxItem>
         <maml:name>Add-ItemToTaskBar</maml:name>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
-          <maml:name>targetFilePath</maml:name>
+          <maml:name>TargetFilePath</maml:name>
           <maml:Description>
             <maml:para>The path to the application that should be launched when clicking on the task bar icon.</maml:para>
           </maml:Description>
@@ -106,41 +106,17 @@
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>ignoredArguments</maml:name>
-          <maml:Description>
-            <maml:para>Allows splatting with arguments that do not apply. Do not use directly.</maml:para>
-          </maml:Description>
-          <command:parameterValue required="true" variableLength="false">Object[]</command:parameterValue>
-          <dev:type>
-            <maml:name>Object[]</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
       </command:syntaxItem>
     </command:syntax>
     <command:parameters>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
-        <maml:name>targetFilePath</maml:name>
+        <maml:name>TargetFilePath</maml:name>
         <maml:Description>
           <maml:para>The path to the application that should be launched when clicking on the task bar icon.</maml:para>
         </maml:Description>
         <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
         <dev:type>
           <maml:name>String</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>None</dev:defaultValue>
-      </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-        <maml:name>ignoredArguments</maml:name>
-        <maml:Description>
-          <maml:para>Allows splatting with arguments that do not apply. Do not use directly.</maml:para>
-        </maml:Description>
-        <command:parameterValue required="true" variableLength="false">Object[]</command:parameterValue>
-        <dev:type>
-          <maml:name>Object[]</maml:name>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>

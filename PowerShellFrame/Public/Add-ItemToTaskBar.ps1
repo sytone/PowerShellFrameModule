@@ -1,45 +1,38 @@
-<#
-.SYNOPSIS
-Creates an item in the task bar linking to the provided path.
-
-.PARAMETER TargetFilePath
-The path to the application that should be launched when clicking on the
-task bar icon.
-
-.PARAMETER IgnoredArguments
-Allows splatting with arguments that do not apply. Do not use directly.
-
-.EXAMPLE
-Add-ItemToTaskBar -TargetFilePath "${env:ProgramFiles(x86)}\Google\Chrome\Application\chrome.exe"
-
-#>
 function Add-ItemToTaskBar {
 param(
-  [parameter(Mandatory=$true, Position=0)][string] $targetFilePath,
-  [parameter(ValueFromRemainingArguments = $true)][Object[]]$ignoredArguments
+  [parameter(Mandatory=$true, Position=0)]
+  [ValidateNotNullOrEmpty()]
+  [string] 
+  $TargetFilePath
 )
-  try {
-    if (test-path($targetFilePath)) {
-      $verb = "Pin To Taskbar"
-		  $path = split-path $targetFilePath
-		  $shell = new-object -com "Shell.Application"
-		  $folder = $shell.Namespace($path)
-		  $item = $folder.Parsename((split-path $targetFilePath -leaf))
-		  $itemVerb = $item.Verbs() | ? {$_.Name.Replace("&","") -eq $verb}
-		  if($itemVerb -eq $null){
-  			Write-Host "TaskBar verb not found for $item. It may have already been pinned"
-  		} else {
-  			$itemVerb.DoIt()
-  		}
-  		Write-Host "`'$targetFilePath`' has been pinned to the task bar on your desktop"
-  	} else {
-  		$errorMessage = "`'$targetFilePath`' does not exist, not able to pin to task bar"
-  	}
-  
-  	if ($errorMessage) {
-  		Write-Warning $errorMessage
-  	}
-  } catch {
-    Write-Warning "Unable to create pin. Error captured was $($_.Exception.Message)."
+try {
+  if (test-path($TargetFilePath)) {
+    $KeyPath1  = "HKCU:\SOFTWARE\Classes"
+    $KeyPath2  = "*"
+    $KeyPath3  = "shell"
+    $KeyPath4  = "{:}"
+    $ValueName = "ExplorerCommandHandler"
+    $ValueData =
+      (Get-ItemProperty `
+        ("HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\" + `
+          "CommandStore\shell\Windows.taskbarpin")
+      ).ExplorerCommandHandler
+
+    $Key2 = (Get-Item $KeyPath1).OpenSubKey($KeyPath2, $true)
+    $Key3 = $Key2.CreateSubKey($KeyPath3, $true)
+    $Key4 = $Key3.CreateSubKey($KeyPath4, $true)
+    $Key4.SetValue($ValueName, $ValueData)
+
+    $Shell = New-Object -ComObject "Shell.Application"
+    $Folder = $Shell.Namespace((Get-Item $Target).DirectoryName)
+    $Item = $Folder.ParseName((Get-Item $Target).Name)
+    $Item.InvokeVerb("{:}")
+
+    $Key3.DeleteSubKey($KeyPath4)
+    if ($Key3.SubKeyCount -eq 0 -and $Key3.ValueCount -eq 0) {
+      $Key2.DeleteSubKey($KeyPath3)
+    }
   }
+} catch {
+  Write-Warning "Unable to create pin. Error captured was $($_.Exception.Message)."
 }

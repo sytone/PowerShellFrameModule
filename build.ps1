@@ -44,7 +44,10 @@ else
     # Create new markdown and XML help files
     Write-Host "Building new function documentation" -ForegroundColor Yellow
     Import-Module -Name "$PSScriptRoot\PowerShellFrame" -Force
+    Get-Module PowerShellFrame
+    Write-Host "Updating markdown based help" -ForegroundColor Yellow
     Update-MarkdownHelp "$PSScriptRoot\docs"
+    Write-Host "Building new xml file for help" -ForegroundColor Yellow
     New-ExternalHelp -Path "$PSScriptRoot\docs" -OutputPath "$PSScriptRoot\PowerShellFrame\en-US\" -Force
     #. .\tests\docs.ps1
     Write-Host -Object ''

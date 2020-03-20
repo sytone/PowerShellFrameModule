@@ -22,9 +22,13 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
 
-    - name: Display the path
+    - name: List Package Providers
       run: |
-        Install-PackageProvider -Name NuGet -Force | Out-Null
+        Get-PackageProvider -ListAvailable
+      shell: pwsh
+
+    - name: Install Modules
+      run: |
         Install-Module -Name Pester -Force
         Install-Module -Name posh-git -Force
         Install-Module -Name platyPS -Force
